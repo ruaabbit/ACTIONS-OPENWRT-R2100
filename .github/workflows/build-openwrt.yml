@@ -15,15 +15,17 @@ on:
   workflow_dispatch:
     inputs:
       config:
-        description: 'Full Name of Config'
-        required: true
         type: string
+        description: 'Config'
+        required: true
         default: '.config'
       branch:
-        description: 'Name of Branch'
+        type: choice
+        description: 'Branch'
+        options: 
+        - openwrt-21.02
+        - openwrt-18.06-k5.4
         required: true
-        type: string
-        default: 'openwrt-21.02'
 
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
